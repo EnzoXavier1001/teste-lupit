@@ -29,9 +29,9 @@ export const Home = () => {
     }
   }
 
-  async function getList(diretoria: string) {
+  async function getList(dre: string) {
     try {
-      const response = await api.get(`/smeescolas/${diretoria}`)
+      const response = await api.get(`/smeescolas/${dre}`)
       setList(response.data.results)
     } catch(e) {
       console.log('ERORR: ' + e)
@@ -43,7 +43,7 @@ export const Home = () => {
       <Header />
       <Select 
         options={diretorias} 
-        onChange={getList} 
+        handleSelectChange={getList} 
       />
       <Table list={list}/>
       <Footer />

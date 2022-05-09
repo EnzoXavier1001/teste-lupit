@@ -8,7 +8,7 @@ export const Table = styled.table`
     border-radius: 10px;
     margin-top: 20px;
     max-width: 1120px;
-    margin: 0 auto;
+    margin: 25px auto;
     min-height: 75vh;
 `;
 

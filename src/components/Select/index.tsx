@@ -3,14 +3,15 @@ import { Category } from '../../types/Category'
 
 type SelectProps = {
   options: Category[];
-  onChange: (diretoria: string) => void;
+  handleSelectChange: (diretoria: string) => void;
 }
 
-export default function Select({ options, onChange }: SelectProps) {
+export default function Select({ options, handleSelectChange }: SelectProps) {
   return (
     <C.Container>
-        <C.Select onChange={(e) => onChange(e.target.value)}>
+        <C.Select onChange={(e) => handleSelectChange(e.target.value)}>
             <>
+              <option disabled defaultValue={'-- Selecione uma diretoria'}>-- Selecione uma diretoria --</option>
               {options.map((item, index) => (
                 <option key={index} value={item.dre}>
                   {item.diretoria}
